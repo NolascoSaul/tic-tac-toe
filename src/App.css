@@ -37,4 +37,69 @@ main header p {
   border: #e0e0e0 2px solid;
   border-radius: 0.5rem;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.board .cell:hover {
+  transform: translateY(1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #333;
+  font-size: 0.975rem;
+  font-weight: 600;
+  border: 1px solid #e0e0e0;
+  border-radius: 99999999999999px;
+  background-color: #fff;
+  padding: 0.75rem 1.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #e0e0e0;
+}
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.stats .stats__x {
+  color: rgba(238, 15, 82, 0.685);
+
+  span{
+    color: #333;
+    opacity: 0.8;
+    font-size: 0.85rem;
+  }
+}
+
+.stats .stats__y {
+  color: rgb(71, 74, 230);
+
+  span{
+    color: #333;
+    opacity: 0.8;
+    font-size: 0.85rem;
+  }
 }
