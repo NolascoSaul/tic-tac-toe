@@ -1,10 +1,11 @@
 import "./App.css";
+import confetti from "canvas-confetti";
 import { useState } from "react";
-import { FaRotateLeft } from "react-icons/fa6";
 import { Square } from "./components/Square.jsx";
 import { TURNS } from "./consts.js";
 import { checkWinner } from "./utils/board.js";
-import confetti from "canvas-confetti";
+import { Modal } from "./components/Modal.jsx";
+import { ButtonReset } from "./components/ButtonReset.jsx";
 
 function App() {
   const [board, setBoard] = useState(Array(9).fill(null));
@@ -56,11 +57,7 @@ function App() {
         ))}
       </section>
       <footer>
-        <button className="button" onClick={resetGame}>
-          <FaRotateLeft></FaRotateLeft>
-          New Game
-        </button>
-
+        <ButtonReset resetGame={resetGame}></ButtonReset>
         <section className="stats">
           <div className="stats__x">
             <strong>Player X</strong>
@@ -72,6 +69,8 @@ function App() {
           </div>
         </section>
       </footer>
+
+      <Modal winner={winner} resetGame={resetGame}></Modal>
     </main>
   );
 }
